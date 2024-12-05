@@ -1,7 +1,7 @@
-[--solutionname--] Details
+[greonproject-4ce8] Details
 ============================
 
-Generated On: --datetime-- UTC
+Generated On: 2024-12-05 17:49:56 UTC
 
 TML Solution DAG Parameters' Details: User Chosen Parametets
 ----------------------------
@@ -14,19 +14,19 @@ STEP 1: Get TML Core Params: `tml_system_step_1_getparams_dag <https://tml.readt
    * - **User Parameter**
      - **Chosen Value**
    * - solutionname
-     - --solutionname--
+     - greonproject-4ce8
    * - solutiontitle
-     - --solutiontitle--
+     - My Solution Title
    * - solutiondescription
-     - --solutiondescription--
+     - This is an awesome real-time solution built by TSS
    * - brokerhost
-     - --brokerhost--
+     - 127.0.0.1
    * - brokerport
-     - --brokerport--
+     - 9092
    * - cloudusername
-     - --cloudusername--
+     - None
    * - ingestdatamethod
-     - --ingestdatamethod--
+     - MQTT
  
 STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-2-create-kafka-topics-tml-system-step-2-kafka-createtopic-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,29 +36,29 @@ STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <https://t
    * - **User Parameter**
      - **Chosen Value**
    * - companyname
-     - --companyname--
+     - Otics
    * - myname
-     - --myname--
+     - Sebastian
    * - myemail
-     - --myemail--
+     - Sebastian.Maurice
    * - mylocation
-     - --mylocation--
+     - Toronto
    * - replication
-     - --replication--
+     - 1
    * - numpartitions
-     - --numpartitions--
+     - 1
    * - enabletls
-     - --enabletls--
+     - 1
    * - microserviceid
-     - --microserviceid--
+     - 
    * - raw_data_topic
-     - --raw_data_topic--
+     - iot-raw-data
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - prediction_data_topic
-     - --prediction_data_topic--
+     - prediction-data
 
 STEP 3: `Produce to Kafka Topics <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-3-produce-to-kafka-topics>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -68,25 +68,25 @@ STEP 3: `Produce to Kafka Topics <https://tml.readthedocs.io/en/latest/tmlbuilds
    * - **User Parameter**
      - **Chosen Value**
    * - PRODUCETYPE
-     - --PRODUCETYPE--
+     - MQTT
    * - TOPIC
-     - --TOPIC--
+     - iot-raw-data
    * - PORT
-     - --PORT--
+     - 45681
    * - IDENTIFIER
-     - --IDENTIFIER--
+     - MQTT Subscription Topic: 
    * - HTTPADDR
-     - --HTTPADDR--
+     - https://
    * - FROMHOST
-     - --FROMHOST--
+     - gagan,127.0.1.1
    * - TOHOST
-     - --TOHOST--
+     - 127.0.1.1
    * - CLIENTPORT
-     - --CLIENTPORT--
+     - Not Applicable
    * - TSS_CLIENTPORT
-     - --TSSCLIENTPORT--
+     - Not Applicable
    * - TML_CLIENTPORT
-     - --TMLCLIENTPORT--
+     - Not Applicable
 
 STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-4-preprocesing-data-tml-system-step-4-kafka-preprocess-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,33 +96,33 @@ STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <https://tml.
    * - **User Parameter**
      - **Chosen Value**
    * - raw_data_topic
-     - --raw_data_topic--
+     - iot-raw-data
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - preprocessconditions
-     - --preprocessconditions--
+     - 
    * - delay
-     - --delay--
+     - 70
    * - array
-     - --array--
+     - 0
    * - saveasarray
-     - --saveasarray--
+     - 1
    * - topicid
-     - --topicid--
+     - -999
    * - rawdataoutput
-     - --rawdataoutput--
+     - 1
    * - asynctimeout
-     - --asynctimeout--
+     - 120
    * - timedelay
-     - --timedelay--
+     - 0
    * - preprocesstypes
-     - --preprocesstypes--
+     - anomprob,trend,avg
    * - pathtotmlattrs
      - --pathtotmlattrs--
    * - identifier
-     - --identifier--
+     - IoT device performance and failures
    * - jsoncriteria
-     - --jsoncriteria--
+     - uid=metadata.dsn,filter:allrecords~subtopics=metadata.property_name~values=datapoint.value~identifiers=metadata.display_name~datetime=datapoint.updated_at~msgid=datapoint.id~latlong=lat:long
 
 STEP 4b: Preprocesing Data: `tml-system-step-4b-kafka-preprocess-dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-4b-preprocesing-data-tml-system-step-4b-kafka-preprocess-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,13 +168,13 @@ STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learnin
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - modelruns
      - --modelruns--
    * - offset
-     - --offset--
+     - -1
    * - islogistic
      - --islogistic--
    * - networktimeout
@@ -190,9 +190,9 @@ STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learnin
    * - rollbackoffsets
      - --rollbackoffsets--
    * - topicid
-     - --topicid--
+     - -999
    * - consumefrom
-     - --consumefrom--
+     - iot-preprocess
    * - fullpathtotrainingdata
      - --fullpathtotrainingdata--
    * - transformtype
@@ -212,7 +212,7 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_prediction_topic
      - --ml_prediction_topic--
    * - streamstojoin
@@ -222,9 +222,9 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - consumefrom
      - --consumefrom2--
    * - offset
-     - --offset--
+     - -1
    * - delay
-     - --delay--
+     - 70
    * - usedeploy
      - --usedeploy--
    * - networktimeout
@@ -232,7 +232,7 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - maxrows
      - --maxrows--
    * - topicid
-     - --topicid--
+     - -999
    * - pathtoalgos
      - --pathtoalgos--
 
@@ -244,21 +244,21 @@ STEP 7: Real-Time Visualization: `tml-system-step-7-kafka-visualization-dag <htt
    * - **User Parameter**
      - **Chosen Value**
    * - vipervizport
-     - --vipervizport--
+     - 9005
    * - topic
-     - --topic--
+     - iot-preprocess,iot-preprocess2
    * - dashboardhtml
-     - --dashboardhtml--
+     - dashboard.html
    * - secure
-     - --secure--
+     - 1
    * - offset
-     - --offset--
+     - -1
    * - append
-     - --append--
+     - 0
    * - chip
-     - --chip--
+     - amd64
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
 
 STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-8-deploy-tml-solution-to-docker-tml-system-step-8-deploy-solution-to-docker-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^
@@ -267,9 +267,30 @@ STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <https://tml.readthedoc
    * - **User Parameter**
      - **Chosen Value**
    * - Docker Container
-     - --dockercontainer--
+     - greon101/greonproject-4ce8-amd64 (https://hub.docker.com/r/greon101/greonproject-4ce8-amd64)
    * - Docker Run Command
-     - --dockerrun--
+     - docker run -d -p 51395:51395 -p 40235:40235 -p 53415:53415 \
+          --env TSS=0 \
+          --env SOLUTIONNAME=greonproject-4ce8 \
+          --env SOLUTIONDAG=solution_preprocessing_ai_mqtt_dag-greonproject-4ce8 \
+          --env GITUSERNAME=Greon101  \
+          --env GITREPOURL=https://github.com/Greon101/raspberrypi.git \
+          --env SOLUTIONEXTERNALPORT=51395 \
+          -v /var/run/docker.sock:/var/run/docker.sock:z \
+          --env CHIP=amd64 \
+          --env SOLUTIONAIRFLOWPORT=40235 \
+          --env SOLUTIONVIPERVIZPORT=53415 \
+          --env DOCKERUSERNAME='greon101' \
+          --env EXTERNALPORT=45681 \
+          --env KAFKACLOUDUSERNAME='' \
+          --env VIPERVIZPORT=9005 \
+          --env MQTTUSERNAME='hivemq.webclient.1725974242180' \
+          --env AIRFLOWPORT=9000 \
+          --env MQTTPASSWORD='<Enter mqtt password>' \
+          --env KAFKACLOUDPASSWORD='<Enter API secret>' \
+          --env GITPASSWORD='<Enter Github Password>' \
+          --env READTHEDOCS='<Enter Readthedocs token>' \
+          greon101/greonproject-4ce8-amd64
 
 STEP 9: `tml_system_step_9_privategpt_qdrant_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-9-privategpt-and-qdrant-integration-tml-system-step-9-privategpt-qdrant-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^
@@ -278,49 +299,49 @@ STEP 9: `tml_system_step_9_privategpt_qdrant_dag <https://tml.readthedocs.io/en/
    * - **User Parameter**
      - **Chosen Value**
    * - PrivateGPT Container
-     - --pgptcontainername--
+     - maadsdocker/tml-privategpt-with-gpu-nvidia-amd64
    * - PrivateGPT Run Command
-     - --privategptrun--
+     - docker run -d -p 8001:8001 --net=host --gpus all --env PORT=8001 --env GPU=1 --env COLLECTION=tml --env WEB_CONCURRENCY=1 --env CUDA_VISIBLE_DEVICES=0 maadsdocker/tml-privategpt-with-gpu-nvidia-amd64
    * - Qdrant Container
-     - --qdrantcontainer--
+     - qdrant/qdrant
    * - Qdrant Run Command
-     - --qdrantrun--
+     - docker run -d -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage:z qdrant/qdrant
    * - Consumefrom
-     - --consumefrom--
+     - iot-preprocess
    * - pgpt_data_topic
-     - --pgpt_data_topic--
+     - cisco-network-privategpt
    * - offset
-     - --offset--
+     - -1
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
    * - topicid
-     - --topicid--
+     - -999
    * - enabletls
-     - --enabletls--
+     - 1
    * - partition
-     - --partition--
+     - -1
    * - prompt
-     - --prompt--
+     - Do the device data show any malfunction or defects?
    * - context
-     - --context--
+     - This is IoT data from devices. The data are anomaly probabilities for each IoT device. If voltage or current probabilities are low, it is likely the device is not working properly.
    * - jsonkeytogather
-     - --jsonkeytogather--
+     - hyperprediction
    * - keyattribute
-     - --keyattribute--
+     - Voltage,current
    * - keyprocesstype
-     - --keyprocesstype--
+     - anomprob
    * - vectordbcollectionname
-     - --vectordbcollectionname--
+     - tml
    * - concurrency
-     - --concurrency--
+     - 1
    * - CUDA_VISIBLE_DEVICES
-     - --cuda--
+     - 0
    * - pgpthost
-     - --pgpthost--
+     - http://127.0.0.1
    * - pgptport
-     - --pgptport--
+     - 8001
    * - hyperbatch
-     - --hyperbatch--
+     - 0
 
 STEP 10: `tml_system_step_10_documentation_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-10-create-tml-solution-documentation-tml-system-step-10-documentation-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^
@@ -329,4 +350,4 @@ STEP 10: `tml_system_step_10_documentation_dag <https://tml.readthedocs.io/en/la
    * - **User Parameter**
      - **Chosen Value**
    * - Solution Documentation URL
-     - --readthedocs--
+     - https://greonproject-4ce8.readthedocs.io
